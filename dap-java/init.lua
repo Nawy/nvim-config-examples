@@ -96,7 +96,7 @@ function get_spring_boot_runner(profile, debug)
 end
 
 function run_spring_boot(debug)
-  vim.cmd('term ' .. get_test_runner(method_name, debug))
+  vim.cmd('term ' .. get_spring_boot_runner(method_name, debug))
 end
 
 vim.keymap.set("n", "<leader>tm", function() run_java_test_method() end)
@@ -104,7 +104,7 @@ vim.keymap.set("n", "<leader>TM", function() run_java_test_method(true) end)
 vim.keymap.set("n", "<leader>tc", function() run_java_test_class() end)
 vim.keymap.set("n", "<leader>TC", function() run_java_test_class(true) end)
 vim.keymap.set("n", "<F9>", function() run_spring_boot() end)
-vim.keymap.set("n", "<S-F9>", function() run_spring_boot(true) end)
+vim.keymap.set("n", "<F10>", function() run_spring_boot(true) end)
 
 -- setup debug
 key_map('n', '<leader>b', ':lua require"dap".toggle_breakpoint()<CR>')
